@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    body {
+        font-family: "Times New Roman", Georgia, Serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Playfair Display";
+        letter-spacing: 5px;
+    }
+
+    img {
+        size: 700px !important;
+    }
+
+    p {
+        font-size: 25px;
+    }
+
+    span {
+        display: flex;
+        justify-content: space-between;
+        background: lightgrey;
+    }
+
+    .box {
+        display: flex;
+    }
+
+    .square {
+        height: 120px;
+        width: 120px;
+        background-color: blue;
+        margin-left: 80px;
+        border-radius: 50%;
+        border: 1px solid black;
+        transform: 1s;
+        text-align: center;
+    }
+
+    .container {
+        margin-top: 825px;
+        position: sticky;
+        top: 825px;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+    }
+
+    /* animation */
+    #wrapper {
+
+        position: relative;
+        perspective: 2000px;
+        transform-style: preserve-3d;
+        width: 100px;
+        height: 100px;
+
+
+
+    }
+
+    .box-area {
+
+        position: absolute;
+        transform-style: preserve-3d;
+        animation-name: rotate;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-left: 50px;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate3d(0, 0, 0, 0);
+        }
+
+        100% {
+            transform: rotate3d(0, 1, 0, 360deg);
+            ;
+        }
+    }
+
+    .box {
+        position: absolute;
+        width: 110px;
+        height: 110px;
+    }
+
+    #box-front {
+        transform: translateX(-50px) translateY(-20px) translateZ(30px) rotateY(120deg);
+        background: rgba(3, 21, 6, 1);
+        background: linear-gradient(-45deg, rgb(52, 177, 250), rgb(10, 157, 216), rgb(7, 143, 223));
+        border-radius: 50%;
+    }
+
+    #box-back {
+        transform: translateY(-20px) translateX(20px) translateZ(20px) rotateY(240deg);
+        background: rgba(33, 21, 6, 1);
+        background: linear-gradient(-45deg, rgb(52, 177, 250), rgb(10, 157, 216), rgb(7, 143, 223));
+        border-radius: 50%;
+    }
+
+    #box-right {
+        transform: translateY(-20px) translateX(-20px) translateZ(-20px) rotateY(360deg);
+        background: rgba(233, 21, 6, 1);
+        background: linear-gradient(-45deg, rgb(52, 177, 250), rgb(10, 157, 216), rgb(7, 143, 223));
+        border-radius: 50%;
+    }
+
+    #container {
+        position: fixed;
+        bottom: 50px;
+        left: 20px;
+    }
+</style>
+
+<body>
+
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">Gourmet au Catering</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#menu" class="w3-bar-item w3-button">Menu</a>
+                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar (sit on top) -->
+    <div class="box">
+        <div class="left" style="width: 20%; float:left">
+            <div id="container">
+                <div id="wrapper">
+                    <div class="box-area">
+                        <div id="box-front" onclick="first()" class="box">
+                            <div style="transform: rotateY(180deg); text-align: center; margin-top: 20px;">Employees
+                                Data
+                                <button class="btn1">Click</button>
+                            </div>
+                        </div>
+                        <div id="box-right" onclick="first()" class="box" style="text-align: center;">
+                            <div style="transform: rotateY(180deg); text-align: center; margin-top: 20px;">Random
+                                Data1
+                                <button class="btn2">Click</button>
+                            </div>
+                        </div>
+                        <div id="box-back" onclick="first()" class="box">
+                            <div style="transform: rotateY(180deg); text-align: center; margin-top: 20px;">Random
+                                Data2
+                                <button class="btn3">Click</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right" style="margin-left: 400px;">
+
+
+            <!-- Header -->
+            <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+
+                <img class="w3-image" src="/w3images/hamburger.jpg" alt="Hamburger Catering" width="1600" height="800">
+                <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+                    <h1 class="w3-xxlarge">Le Catering</h1>
+                </div>
+            </header>
+
+
+            <!-- Page content -->
+            <div class="w3-content" style="max-width:1100px">
+
+                <!-- About Section -->
+                <div class="w3-row w3-padding-64" id="about">
+                    <div class="w3-col m6 w3-padding-large w3-hide-small">
+                        <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YnVyZ2VyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"
+                            alt="kk">
+                    </div>
+                </div>
+
+                <div class="content">
+                    <p>The other day Mike and I went on a massively long walk. The sun was gorgeously bright, the sky
+                        was a
+                        brilliant winter blue and the air was crisp but not too cold. It was one of those
+                        rambling&nbsp;walks
+                        where we didn’t have a destination in mind – we were just walking, talking, and taking in Tokyo.
+                        Eventually we realized we were hungry and upon this epiphany, I realized that my feet were
+                        throbbing
+                        a
+                        little. It was definitely time for a snack and a drink or two.
+                    </p>
+                    <p>Afterwards, our inebriated selves (okay, my inebriated self) decided we&nbsp;HAD to go shopping
+                        so I
+                        dragged Mike to the <a href="http://www.natural-kitchen.jp/" target="_blank"
+                            rel="noopener">dollar
+                            store</a>. “Dollar store?” you might be thinking. Yes, the dollar store (it’s actually a 100
+                        yen
+                        store). Dollar stores are amazing in Japan. I can’t get over how many amazing things they can
+                        sell
+                        for a
+                        dollar. The majority of the items are quality made in Japan products. I’m talking about awesome
+                        kitchen
+                        goods like ceramic ginger graters and customizable alphabet&nbsp;cookie stamps. I’m a true
+                        dollar
+                        store
+                        fanatic and that’s when I’m sober. Imagine how I am in a dollar store with my inhibitions
+                        lowered.
+                    </p>
+                    <!-- <button style="float: right;">closing</button><br> -->
+                    <p>Let’s just say I came away from that whole experience 12 mini-mini ramekins richer. After I
+                        sobered
+                        up I
+                        said to Mike, “why the heck did I&nbsp;end up buying a DOZEN tiny ramekins? Who can these even
+                        feed?
+                        They aren’t even big enough for ants!” His adorable answer was that the ramekins seemed to make
+                        me
+                        really happy. Also apparently I wouldn’t let go of them and told him many many recipes I could
+                        use
+                        them
+                        for. If only I could remember them now…
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
