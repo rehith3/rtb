@@ -67,8 +67,6 @@ div.append(image)
 // container.append(wrapper);
 
 //data fetch
-const myJSON = '{"name":"John", "age":30, "car":"audi"}';
-const myObj = JSON.parse(myJSON);
 
 const button1 = document.getElementById('btn1');
 const button2 = document.getElementById('btn2');
